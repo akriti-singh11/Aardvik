@@ -1,0 +1,146 @@
+/* Base styles */
+html{
+  background-image:linear-gradient(rgb(77, 169, 206),rgb(225, 37, 65));
+}
+
+
+
+
+h2{
+  color: #77E4C8;
+  font-size: 2rem;
+  font-family: "Sixtyfour Convergence", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "BLED" 0,
+    "SCAN" 0,
+    "XELA" 0,
+    "YELA" 0;
+  padding: 0px;
+  margin:0;
+}
+.points{
+  color:#f2e70d;
+  font-size: 2rem;
+}
+.tracker-column {
+  
+  padding: 10px;
+  margin: 10px;
+}
+
+.task-list {
+  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 tasks per row */
+  gap: 10px;
+  
+}
+
+
+
+.task {
+  
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: none;
+  padding: 2px;
+  box-shadow: 3px 2px rgb(64, 74, 77);
+  cursor: pointer;
+  border-radius: 20%;
+}
+
+/* Task states */
+.completed {
+  background-color: rgb(14, 247, 123);
+  color: white;
+}
+.completed:hover{
+  box-shadow: #77E4C8 -1px -1px 10px 10px;
+}
+
+.not-completed {
+  background-color: rgb(219, 2, 74);
+  color: white;
+}
+.not-completed:hover{
+  box-shadow: #da1678 -1px -1px 10px 10px;
+}
+.no-task {
+  background-color: grey;
+  color: rgb(13, 10, 10);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .task-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 tasks per row for large tablets */
+  }
+}
+
+@media (max-width: 900px) {
+  .task-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 tasks per row for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .task-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 tasks per row for mobile */
+  }
+
+  .task {
+    width: 40px;
+    height: 40px;
+    font-size: 12px; /* Smaller task boxes on mobile */
+  }
+}
+
+@media (max-width: 400px) {
+  .task-list {
+    grid-template-columns: 1fr; /* 1 task per row for very small screens */
+  }
+}
+.animation-area {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+
+.canvas-container {
+  position: absolute; /* Overlaying on other components */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  pointer-events: none; /* Let clicks pass through the canvas */
+  z-index: 10; /* Make sure it stays on top */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
