@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ref, onValue, set } from 'firebase/database';
+import {database, ref, onValue, set } from 'firebase/database';
 import { db } from '../firebase.js'; // Assuming Firebase is set up
 
 const TrackerColumn = ({ name }) => {
